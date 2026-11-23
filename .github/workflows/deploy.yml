@@ -29,14 +29,16 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+        working-directory: COP3874_Activity2_GitHub_Ready
 
       - name: Build website
         run: npm run build -- --base=/COP3874-Activity2/
+        working-directory: COP3874_Activity2_GitHub_Ready
 
       - name: Upload website
         uses: actions/upload-pages-artifact@v3
         with:
-          path: dist
+          path: COP3874_Activity2_GitHub_Ready/dist
 
   deploy:
     environment:
